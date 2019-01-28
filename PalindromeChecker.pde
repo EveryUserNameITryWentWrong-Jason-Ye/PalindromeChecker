@@ -13,17 +13,33 @@ public void setup()
       println(lines[i] + " is NOT a palindrome.");
     }
   }
+  
 }
 public boolean palindrome(String word)
 {
-  //your code here
+  String palindrome = "";
+  
+  for(int i = 0; i <= word.length() - 1; i++){
+    if(Character.isLetter(word.charAt(i))){
+      palindrome += word.charAt(i);
+    }
+  }
+  
+  if(palindrome.toLowerCase().equals(reverse(word))){
+    return true; 
+  }
   return false;
 }
-public String reverse(String str)
+public String reverse(String sWord)
 {
-    String sNew = new String();
-    //your code here
-    return sNew;
-}
+    String sNew = new String();   
+  
+  for(int i = sWord.length() - 1; i >= 0; i--){
+    if(Character.isLetter(sWord.charAt(i))){
+      sNew += sWord.charAt(i);
+    }
+  }
 
+    return sNew.toLowerCase();
+}
 
